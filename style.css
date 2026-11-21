@@ -1,0 +1,290 @@
+/*
+Theme Name: DMCC Logistic
+Author: Bharat
+Description: Custom WordPress theme
+Version: 1.0
+*/
+
+
+
+/* =========================================================
+   DMCC Logistic | style.css
+   blue = #10489F   gold = #B39541   grey = #F7F7F7
+   ========================================================= */
+
+/* ---------- 1. Colours  ---------- */
+:root {
+  --blue: #10489f;
+  --dark-blue: #0a2f6b;
+  --gold: #b39541;
+  --grey: #f7f7f7;
+  --text: #0f1b33;
+  --soft-text: #475270;
+}
+main { overflow-x: hidden; overflow-x: clip; }
+/* ---------- 2. Basics ---------- */
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+img { max-width: 100%; height: auto; }
+a { color: var(--blue); text-decoration: none; }
+ul { list-style: none; padding: 0; }
+p { color: var(--soft-text); }
+
+h2 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+
+.section { padding: 90px 0; }
+.bg-grey { background: var(--grey); }
+.big { font-size: 1.15rem; color: var(--text); }
+.small-title { color: var(--blue); margin: 1.8rem 0 0.8rem; }
+
+.photo-col { display: flex; }          /* the image column stretches as tall as the text column */
+.photo {
+  width: 100%;
+  height: 100%;                          /* image fills the full column height */
+  object-fit: cover;                     /* crops the photo instead of squashing it */
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(7, 29, 69, 0.25);
+}
+
+/* ---------- 3. Buttons ---------- */
+.btn { padding: 12px 28px; border-radius: 10px; font-weight: 600; transition: 0.3s; }
+
+.btn-gold { background: var(--gold); color: #071d45; }
+.btn-gold:hover { background: #fff; color: var(--blue); transform: translateY(-3px); }
+
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-blue:hover { background: var(--gold); color: #071d45; transform: translateY(-3px); }
+
+.btn-outline-light:hover { color: var(--blue); transform: translateY(-3px); }
+
+/* ---------- 4. Navbar ---------- */
+.navbar { background: #fff; padding: 8px 0; transition: 0.3s; }
+.navbar.scrolled { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12); }
+.navbar-brand img { height: 70px; width: auto; }
+.nav-link { color: var(--text); font-weight: 500; }
+.nav-link:hover { color: var(--gold); }
+.navbar-toggler { border: 0; font-size: 2rem; color: var(--blue); }
+.navbar-toggler:focus { box-shadow: none; }
+
+/* ---------- 5. Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 120px;
+  background: var(--dark-blue);
+  overflow: hidden;
+}
+.hero-img {                /* photo fills the right side, blue background shows on the left */
+  position: absolute;
+  top: 0; right: 0;
+  width: 75%; height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {            /* dark blue shade so the white text is easy to read */
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, rgba(10, 47, 107, 1) 28%, rgba(10, 47, 107, 0) 60%);
+}
+.hero-content { position: relative; }
+.hero-title { color: #fff; font-size: 4.2rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.2rem; }
+.hero-text { color: #fff; font-size: 1.2rem; max-width: 520px; margin-bottom: 2rem; }
+.hero-buttons .btn { margin: 0 10px 10px 0; }
+
+/* ---------- 6. Stats bar (sits half on the hero) ---------- */
+.stats { margin-top: -60px; position: relative; z-index: 2; }
+.stats-box {
+  background: #fff;
+  border-top: 5px solid var(--gold);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(7, 29, 69, 0.2);
+}
+.stat { padding: 22px 10px; }
+.stat h2 { color: var(--blue); font-size: 2.4rem; margin: 0; }
+.stat p { margin: 0; font-size: 0.9rem; }
+
+/* ---------- 7. About ---------- */
+.tag {
+  display: inline-block;
+  background: var(--grey);
+  border: 1px solid #d9deea;
+  border-radius: 30px;
+  padding: 4px 16px;
+  margin: 0 6px 8px 0;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.tag-gold { background: #efe7cc; border-color: var(--gold); }
+
+/* ---------- 8. Mission and vision (two tilted cards, cut in the centre) ---------- */
+.purpose { position: relative; padding: 100px 0; overflow: hidden; }
+.bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.bg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(7, 29, 69, 0.55); }
+.purpose-content { position: relative; }
+
+.cards { display: flex; }                /* two cards side by side */
+
+.box {
+  flex: 1;                               /* both cards get equal width */
+  min-height: 340px;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;           /* icon on top, then the text */
+  gap: 45px;                             /* same space under the icon, so both headings line up */
+}
+.box i { font-size: 2.5rem; }
+.box h2 { font-size: 1.9rem; }
+.box p { font-size: 1.15rem; margin: 0; }
+
+/* clip-path cuts the slanted edge: the numbers are the corner points (left top, right top, right bottom, left bottom) */
+.box-blue {
+  background: var(--blue);
+  clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
+  border-radius: 14px 0 0 14px;
+  padding-right: 12%;
+}
+.box-blue i { color: var(--gold); }
+.box-blue h2, .box-blue p { color: #fff; }
+
+.box-gold {
+  background: var(--gold);
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%);
+  border-radius: 0 14px 14px 0;
+  margin-left: -4%;                      /* pulls the gold card in so the two slants sit close together */
+  padding-left: 14%;
+}
+.box-gold i, .box-gold h2, .box-gold p { color: #071d45; }
+
+/* ---------- 9. Fleet ---------- */
+.vehicle {
+  background: #fff;
+  border: 1px solid #d9deea;
+  border-radius: 12px;
+  padding: 16px;
+  transition: 0.3s;
+}
+.vehicle i { font-size: 1.6rem; color: var(--blue); margin-right: 6px; }
+.vehicle:hover { transform: translateY(-5px); border-color: var(--gold); }
+
+.length { display: flex; align-items: center; margin-bottom: 10px; }
+.length span { width: 60px; font-weight: 600; }
+.track { flex: 1; background: #e3e8f3; border-radius: 5px; height: 20px; }
+.bar { background: var(--blue); height: 100%; border-radius: 5px; }
+.bar-gold { background: var(--gold); }
+
+/* ---------- 10. Industries ---------- */
+.industry {
+  border: 1px solid #d9deea;
+  border-radius: 12px;
+  padding: 30px 20px;
+  height: 100%;
+  transition: 0.3s;
+}
+.industry i { font-size: 2rem; color: var(--blue); }
+.industry h3 { margin: 15px 0 0; transition: 0.3s; }
+.industry:hover { background: var(--blue); transform: translateY(-5px); }
+.industry:hover h3 { color: #fff; }
+.industry:hover i { color: var(--gold); }
+
+/* ---------- 11. Safety ---------- */
+.feature-list li { background: #fff; border-left: 4px solid var(--gold); border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; transition: 0.3s;}
+.feature-list li:hover { transform: translateX(8px); border-left-color: var(--blue); }
+.feature-list i { color: var(--blue); font-size: 1.3rem; margin-right: 10px; }
+
+/* ---------- 12. Quality ---------- */
+.quality { background: var(--blue); }
+.quality h2, .quality p { color: #fff; }
+.pillar {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  color: #fff;
+  padding: 16px 20px;
+  transition: 0.3s;
+}
+.pillar i { color: #e0c36e; font-size: 1.4rem; margin-right: 10px; }
+.pillar:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-4px); }
+
+/* ---------- 13. Contact ---------- */
+.person {
+  background: var(--grey);
+  border: 1px solid #d9deea;
+  border-top: 5px solid var(--gold);
+  border-radius: 14px;
+  padding: 25px;
+  transition: 0.3s;
+}
+.person:hover { transform: translateY(-8px); box-shadow: 0 20px 35px rgba(7, 29, 69, 0.2); }
+.avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+  transition: 0.3s;
+}
+.person:hover .avatar { background: var(--gold); color: #071d45; }
+
+.quote-form { background: var(--grey); border: 1px solid #d9deea; border-radius: 16px; padding: 30px; }
+.form-label { font-weight: 500; font-size: 0.9rem; }
+.form-control, .form-select { padding: 12px 14px; border-radius: 10px; }
+
+.office { border-left: 4px solid var(--gold); background: var(--grey); border-radius: 0 12px 12px 0; padding: 14px 20px; margin-bottom: 12px; }
+.office h3 { color: var(--blue); font-size: 1rem; margin-bottom: 4px; }
+.office p { margin: 0; font-size: 0.93rem; }
+
+/* ---------- 14. Footer ---------- */
+.footer { background: #071d45; padding: 60px 0 25px; }
+
+/* Hexagon logo: a gold hexagon with a smaller white hexagon inside it */
+.hex-badge,
+.hex-inner {
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hex-badge { width: 150px; height: 130px; background: var(--gold); flex-shrink: 0; }
+.hex-inner { width: calc(100% - 14px); height: calc(100% - 12px); background: #fff; }
+.hex-inner img { width: 62%; }
+
+.footer-tag { color: #fff; font-size: 1.3rem; font-weight: 600; margin: 0; }
+
+.footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 32px; margin: 0; }
+.footer-links a { color: #fff; font-weight: 500; transition: 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+
+.footer-copy { color: #9aa6c2; font-size: 0.9rem; margin: 45px 0 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.15); }
+
+/* ---------- 15. Tablets and phones ---------- */
+@media (max-width: 991px) {
+  h2 { font-size: 2rem; }
+  .section { padding: 60px 0; }
+  .navbar-brand img { height: 56px; }
+  .hero-title { font-size: 3rem; }
+  .hero-img { width: 100%; }
+  .hero-overlay { background: rgba(10, 47, 107, 0.8); }   /* full shade, text sits over the photo */
+  .photo { height: auto; min-height: 260px; }              /* stacked layout: image keeps its own height */
+  .footer-links { justify-content: flex-start; }
+}
+@media (max-width: 767px) {
+  .cards { flex-direction: column; gap: 16px; }            /* cards stack, no tilt on phones */
+  .box-blue, .box-gold { clip-path: none; border-radius: 14px; margin-left: 0; padding: 30px; min-height: 260px; }
+}
+@media (max-width: 575px) {
+  .hero-title { font-size: 2.5rem; }
+  .hex-badge { width: 110px; height: 95px; }
+  .footer-tag { font-size: 1.1rem; }
+}
