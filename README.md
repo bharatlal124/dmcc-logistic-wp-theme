@@ -20,7 +20,7 @@ Built from scratch with PHP, HTML, CSS and JavaScript (no page builder).
 PHP, WordPress, HTML5, CSS3, JavaScript, Bootstrap 5, GSAP
 
 ## Live Demo
-live link 
+live link : https://dmcc-logistic.infinityfreeapp.com/ 
 
 ## Author
 Bharat
