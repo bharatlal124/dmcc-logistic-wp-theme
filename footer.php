@@ -14,7 +14,7 @@ $img = get_template_directory_uri() . '/images/';
               <img src="<?php echo esc_url($img . 'logo.webp'); ?>" width="600" height="477" loading="lazy" alt="DMCC Logistic logo">
             </div>
           </div>
-          <p class="footer-tag">Your cargo, our commitment.</p>
+          <p class="footer-tag"><?php dmcc_e('footer_tagline'); ?></p>
         </div>
 
         <!-- Right: menu links -->
@@ -30,7 +30,7 @@ $img = get_template_directory_uri() . '/images/';
         </div>
       </div>
 
-      <p class="footer-copy">&copy; <span id="year"><?php echo esc_html(date('Y')); ?></span> DMCC Logistic Private Limited. All rights reserved.</p>
+      <p class="footer-copy">&copy; <span id="year"><?php echo esc_html(date('Y')); ?></span> <?php dmcc_e('footer_company'); ?>. All rights reserved.</p>
     </div>
   </footer>
 

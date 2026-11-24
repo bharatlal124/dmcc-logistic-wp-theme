@@ -63,7 +63,7 @@ $img = get_template_directory_uri() . '/images/';
           <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
           <li class="nav-item"><a class="nav-link" href="#safety">Safety</a></li>
           <li class="nav-item"><a class="nav-link" href="#quality">Quality</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-blue" href="#contact">Get a quote</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-blue" href="#contact"><?php dmcc_e('nav_cta_text'); ?></a></li>
         </ul>
       </div>
     </div>
